@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../js/JavaScript.js"></script>
+</head>
+<body>
+    <h3>
+        Pedir una fecha al usuario para calcular el día de la semana que nació. Tenemos que tener la tabla de días de la semana para la correspondencia comenzando en sábado: 
+    </h3>
+    <form>
+        <label>Dia </label>
+        <input type="number" id="cajadia" />
+        <br />
+        <label>Mes </label>
+        <input type="number" id="cajames" />
+        <br />
+        <label>Año: </label>
+        <input type="number" id="cajaano" />
+        <br />
+        <button type="button" onclick="calcularDia()">Calcular</button>
+    </form>
+    <h4 id="resultado"></h4>
+</body>
+</html>

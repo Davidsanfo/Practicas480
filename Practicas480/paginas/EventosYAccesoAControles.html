@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <script src="../js/JavaScript.js"></script>
+</head>
+<body>
+    <div style="width:40%">
+        <h3>Crear una página web para rellenar dos cajas de texto</h3>
+        <h3>Al pulsar el botón sumar mostramos en una capa el resultado de sumar los valores introducidos en la caja de texto</h3>
+        <form>
+            <label>Numero 1: </label>
+            <input type="text" id="num1" />
+            <br />
+            <label>Numero 1: </label>
+            <input type="text" id="num2" />
+            <br />
+            <button type="button" onclick="sumarNumeros()">Pulsar</button>
+        </form>
+        <h4 id="resultado"></h4>
+    </div>
+    <!--<div style="float:right; width:400px">
+        <pre>
+            function sumarNumeros() {
+            var caja1 = document.getElementById("num1");
+            var caja2 = document.getElementById("num2");
+            var num1 = parseInt(caja1.value);
+            var num2 = parseInt(caja2.value);
+            var resultado = document.getElementById("resultado");
+            var suma = num1 + num2;
+            resultado.innerText = suma;
+            alert("Numeros sumados");
+            }
+        </pre>
+    </div>-->
+</body>
+</html>
