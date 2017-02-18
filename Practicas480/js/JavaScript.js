@@ -41,7 +41,7 @@ function calcularLetra()
     var dni = parseInt(caja.value);
     var oper = (dni - (parseInt(dni / 23) * 23));
     var letra;
-    alert(oper);
+    7
     switch (oper) {
         case 0:
             letra = "T";
@@ -136,8 +136,7 @@ function calcularDia() {
     if (mes == 2) {
         mes = 14;
         ano = ano - 1;
-    }
-    alert(ano);
+    }    
     var oper = parseInt(((mes + 1) * 3) / 5);
     var oper2 = parseInt(ano / 4);
     var oper3 = parseInt(ano / 100);
@@ -146,7 +145,32 @@ function calcularDia() {
     var oper6 = parseInt(oper5 / 7);
     var oper7 = parseInt(oper5 - (oper6 * 7));
     var resultado = document.getElementById("resultado");
-    resultado.innerText = oper7;
+    var dia = "";
+    switch (oper7) {
+        case 0:
+            dia = "Sabado";
+            break;
+        case 1:
+            dia = "Domingo";
+            break;
+        case 2:
+            dia = "Lunes";
+            break;
+        case 3:
+            dia = "Martes";
+            break;
+        case 4:
+            dia = "Miercoles";
+            break;
+        case 5:
+            dia = "Jueves";
+            break;
+        case 6:
+            dia = "Viernes";
+            break;
+        
+    }
+    resultado.innerText = "El dia de la semana es: " + dia;
 }
 
 //ConjeturaCollatz
@@ -180,4 +204,59 @@ function tablaMultiplicar() {
     secuencia += "</ul>"
     var resultadao = document.getElementById("resultado");
     resultado.innerHTML = secuencia
+}
+//ValidacionISBN
+function validarISBN() {
+    var caja = document.getElementById("caja");
+    var num = caja.value;
+    var suma = 0;
+    alert("entra")
+    for (var i = 0; i < num.length; i++) {
+        var char = num.charAt(i);
+        var oper = char * (i + 1);
+        suma += oper;
+    }
+    var resultado = document.getElementById("resultado");
+    if (suma % 11 == 0) {
+        resultado.innerText = "correcto";
+
+    } else {
+        resultado.innerText = "incorrecto";
+    }
+}
+//ValidarCodigoEAN
+function validarEAN()
+{
+    var caja = document.getElementById("caja");
+    var num = caja.value;
+    if (num.length == 8 || num.length == 13) {
+        alert("numero correcto");
+        var par = 0;
+        var impar = 0;
+        for (var i = 0; i < num.length - 1; i++) {
+            impar += parseInt(num.charAt(i));
+            i++;
+        }
+        for (var i = 1; i < num.length - 1; i++) {            
+            par += parseInt(num.charAt(i));
+            i++;
+        }
+        
+        if (num.length == 8) {
+            impar = impar * 3;
+        } else {
+            par = par * 3;
+        }
+        var suma = impar + par;
+        suma = suma % 10;
+        var digito = 10 - suma;
+        if (digito == num.charAt(num.length - 1)) {
+            alert("el isbn es correcto");
+        } else {
+            alert("El ISBN no es correcto");
+        }
+    } else {
+        alert("numero incorrecto");
+    }
+
 }
