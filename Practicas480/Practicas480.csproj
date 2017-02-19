@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\jquery-3.1.1.min.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -107,15 +108,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\JavaScript.js" />
-    <Content Include="paginas\EventosYAccesoAControles.html" />
-    <Content Include="paginas\Sentencias.html" />
-    <Content Include="paginas\CalcularLetraDNI.html" />
-    <Content Include="paginas\DiaNacimientoSemana.html" />
-    <Content Include="paginas\ConjeturaCollatz.html" />
-    <Content Include="paginas\Inicio.html" />
-    <Content Include="paginas\TablaMultiplicar.html" />
-    <Content Include="paginas\ValidacionISBN.html" />
-    <Content Include="paginas\ValidarCodigoEAN.html" />
+    <Content Include="PaginasJavaScript\EventosYAccesoAControles.html" />
+    <Content Include="PaginasJavaScript\Sentencias.html" />
+    <Content Include="PaginasJavaScript\CalcularLetraDNI.html" />
+    <Content Include="PaginasJavaScript\DiaNacimientoSemana.html" />
+    <Content Include="PaginasJavaScript\ConjeturaCollatz.html" />
+    <Content Include="PaginasJavaScript\Inicio.html" />
+    <Content Include="PaginasJavaScript\TablaMultiplicar.html" />
+    <Content Include="PaginasJavaScript\ValidacionISBN.html" />
+    <Content Include="PaginasJavaScript\ValidarCodigoEAN.html" />
+    <Content Include="PaginasJQuery\BuscarEmpleados.html" />
+    <Content Include="PaginasJQuery\BuscarJSON.html" />
+    <Content Include="PaginasJQuery\Checkbox.html" />
+    <Content Include="PaginasJQuery\LeerJSON.html" />
+    <Content Include="PaginasJQuery\TiendaDeProductos.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Web.config" />
