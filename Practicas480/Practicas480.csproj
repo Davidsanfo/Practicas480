@@ -108,15 +108,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\JavaScript.js" />
+    <Content Include="PaginasJavaScript\AnilizarCadenaNumeros.html" />
+    <Content Include="PaginasJavaScript\AsociarEventosDinamicamente.html" />
+    <Content Include="PaginasJavaScript\CambiarImagenesRadios.html" />
+    <Content Include="PaginasJavaScript\CrearTablaMultiplicar.html" />
     <Content Include="PaginasJavaScript\EventosYAccesoAControles.html" />
+    <Content Include="PaginasJavaScript\Reloj.html" />
+    <Content Include="PaginasJavaScript\RotarImagen.html" />
+    <Content Include="PaginasJavaScript\SeleccionarDeporte.html" />
     <Content Include="PaginasJavaScript\Sentencias.html" />
     <Content Include="PaginasJavaScript\CalcularLetraDNI.html" />
     <Content Include="PaginasJavaScript\DiaNacimientoSemana.html" />
     <Content Include="PaginasJavaScript\ConjeturaCollatz.html" />
     <Content Include="PaginasJavaScript\Inicio.html" />
+    <Content Include="PaginasJavaScript\SumarNumerosAletorios.html" />
+    <Content Include="PaginasJavaScript\SumarNumerosEnlazados.html" />
     <Content Include="PaginasJavaScript\TablaMultiplicar.html" />
     <Content Include="PaginasJavaScript\ValidacionISBN.html" />
     <Content Include="PaginasJavaScript\ValidarCodigoEAN.html" />
+    <Content Include="PaginasJavaScript\ValidarEmail.html" />
     <Content Include="PaginasJQuery\BuscarEmpleados.html" />
     <Content Include="PaginasJQuery\BuscarJSON.html" />
     <Content Include="PaginasJQuery\Checkbox.html" />

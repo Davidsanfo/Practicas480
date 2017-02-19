@@ -257,18 +257,41 @@ function validarEAN()
     }
 
 }
-
+//validarEmail()
+function validarEmail() {
+    var caja = document.getElementById("txtemail");
+    var email = caja.value;
+    
+    var resultado = document.getElementById("resultado");
+    if (email.indexOf("@") == -1) {
+        resultado.innerText = "No existe @";
+    } else if (email.indexOf("@") == 0 || email.indexOf("@") == email.length - 1) {
+        resultado.innerText = "@ al principio o al final";
+    } else if (email.indexOf("@") != email.lastIndexOf("@")) {
+        resultado.innerText = "Solo puede haber una @";
+    } else if (email.indexOf("@") > email.indexOf(".")) {
+        resultado.innerText = "No se encuentra un punto despues de @"
+    } else {
+        var punto = email.indexOf(".");
+        var dominio = email.substr(punto + 1)
+        if (dominio.length >= 2 || dominio.length >= 4) {
+            resultado.innerText = "CORRECTO"
+        } else {
+            resultado.innerText = "Dominio incorrecto";
+        }
+    }
+}
+        
 //PRACTICAS JQUERY
 //Checkbox
-$(document).ready(function () {
-    $("#botonsumar").click(function () {
-        var suma = 0;
-        $("input[name = 'numeros']:checked").each(function () {
-            var chk = $(this);
-            chk = parseInt(chk.val());
-            suma += chk;
-            
+    $(document).ready(function () {
+        $("#botonsumar").click(function () {
+            var suma = 0;
+            $("input[name = 'numeros']:checked").each(function () {
+                var chk = $(this);
+                chk = parseInt(chk.val());
+                suma += chk;            
+            });
+            $("#suma").text("La suma es: " + suma);
         });
-        $("#suma").text("La suma es: " + suma);
     });
-});
