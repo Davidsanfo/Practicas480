@@ -1,4 +1,5 @@
-﻿//1EventosYAccesoAControles
+﻿//PRACTICAS JAVASCRIPT
+//1EventosYAccesoAControles
 function sumarNumeros() {
     var caja1 = document.getElementById("num1");
     var caja2 = document.getElementById("num2");
@@ -9,7 +10,6 @@ function sumarNumeros() {
     resultado.innerText = suma;
     alert("Numeros sumados");
 }
-
 //2Sentencias
 function mostrarEstacion() {
     var caja = document.getElementById("caja");
@@ -32,7 +32,6 @@ function mostrarEstacion() {
             resultado.innerText = "Resultado incorrecto";
     }
 }
-
 //3CalcularLetraDNi
 function calcularLetra()
 {
@@ -120,7 +119,6 @@ function calcularLetra()
     }
     resultado.innerText = letra;
 }
-
 //4DiaNacimientoSemana
 function calcularDia() {
     var cajadia = document.getElementById("cajadia");
@@ -172,7 +170,6 @@ function calcularDia() {
     }
     resultado.innerText = "El dia de la semana es: " + dia;
 }
-
 //ConjeturaCollatz
 function calcularCollatz() {
     var caja = document.getElementById("caja");
@@ -260,3 +257,18 @@ function validarEAN()
     }
 
 }
+
+//PRACTICAS JQUERY
+//Checkbox
+$(document).ready(function () {
+    $("#botonsumar").click(function () {
+        var suma = 0;
+        $("input[name = 'numeros']:checked").each(function () {
+            var chk = $(this);
+            chk = parseInt(chk.val());
+            suma += chk;
+            
+        });
+        $("#suma").text("La suma es: " + suma);
+    });
+});
