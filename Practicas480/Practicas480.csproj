@@ -134,7 +134,7 @@
     <Content Include="PaginasJavaScript\AsociarEventosDinamicamente.html" />
     <Content Include="PaginasJavaScript\CambiarImagenesRadios.html" />
     <Content Include="PaginasJavaScript\CrearTablaMultiplicar.html" />
-    <Content Include="PaginasJavaScript\EventosYAccesoAControles.html" />
+    <Content Include="PaginasJavaScript\EventosAccesoControles.html" />
     <Content Include="PaginasJavaScript\Reloj.html" />
     <Content Include="PaginasJavaScript\RotarImagen.html" />
     <Content Include="PaginasJavaScript\SeleccionarDeporte.html" />
