@@ -281,6 +281,11 @@ function validarEmail() {
         }
     }
 }
+//AnalizarCadenaNumeros
+function analizarNumeros() {
+    var caja = document.getElementById("");
+}
+
         
 //PRACTICAS JQUERY
 //Checkbox
