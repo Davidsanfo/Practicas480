@@ -130,7 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\JavaScript.js" />
-    <Content Include="PaginasJavaScript\AnalizarCadenaNumeros.html" />
+    <Content Include="PaginasJavaScript\10AnalizarCadenaNumeros.html" />
     <Content Include="PaginasJavaScript\AsociarEventosDinamicamente.html" />
     <Content Include="PaginasJavaScript\CambiarImagenesRadios.html" />
     <Content Include="PaginasJavaScript\CrearTablaMultiplicar.html" />

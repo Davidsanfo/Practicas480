@@ -259,8 +259,7 @@ function validarEAN()
 //validarEmail()
 function validarEmail() {
     var caja = document.getElementById("txtemail");
-    var email = caja.value;
-    
+    var email = caja.value;    
     var resultado = document.getElementById("resultado");
     if (email.indexOf("@") == -1) {
         resultado.innerText = "No existe @";
@@ -282,8 +281,86 @@ function validarEmail() {
 }
 //AnalizarCadenaNumeros
 function analizarNumeros() {
-    var caja = document.getElementById("");
+    //RECUPERAMOS LA CAJA   
+    var caja = document.getElementById("txtnumeros");
+    var numeros = caja.value;
+    var suma = 0;
+    //RECORREMOS TODAS LAS LETRAS DEL TEXTO   
+    for (var i = 0; i < numeros.length; i++) {
+        //CAPTURAR CADA LETRA   
+        //Y CONVERTIR A INT   
+        var letra = numeros.charAt(i);
+        var num = parseInt(letra);
+        //SUMAMOS CADA NUMERO    
+        suma = suma + num;
+    }
+    //OBJETO MATH  
+    //REALIZAR LA MEDIA DE LA SUMA   
+    //ENTRE TODAS LAS LETRAS   
+    var media = suma / numeros.length;
+    //media = Math.floor(media);    
+    var resultado = document.getElementById("resultado");
+    resultado.innerHTML = "Suma: " + suma + "<br/>";
+    resultado.innerHTML += "Media: " + media;
 }
+//Enlazar eventos dinamicamente
+var contador = 1;
+function enlazarEvento()   
+{   
+    var boton2 =  document.getElementById("boton2");   
+    //ENLAZAR LA ACCION CLICK DEL BOTON2 PARA QUE LEA LA FUNCION MOSTRAR MENSAJE   
+    //boton2.onclick = mostrarMensaje;   
+    //boton2.onclick = mostrarMensaje2;   
+   
+    //ENLAZAR EVENTO ONCLICK CON FUNCION ANONIMA   
+    //boton2.onclick = function() {   
+    //    //CODIGO PARA LA ACCION DEL ONCLICK l  
+    //    alert("Mensaje desde función anonima ONCLICK");   
+    //} 
+
+    //REALIZAR LA LLAMADA CON ADDEVENTLISTENER QUE TIENE PILA DE EVENTOS  
+    //REALIZA LAS ACCIONES CONSECUTIVAS EN EL ORDEN EN EL QUE HEMOS ENLAZADO DINAMICAMENTE   
+    //boton2.addEventListener("click", mostrarMensaje);   
+    //boton2.addEventListener("click", mostrarMensaje2); 
+
+    //ENLAZAR CON FUNCION ANONIMA MEDIANTE ADDEVENTLISTENER   
+    //UNA FUNCION ANONIMA EN EVENTLISTENER PERMITE PONER EL CODIGO DE LA MISMA FUNCION EN LA PILA DE LLAMADAS      
+    ////THIS SIEMPRE SERA BOTON2   
+    boton2.addEventListener("click", function() {  
+        alert("Enlace función desde Pila eventos");   
+        alert("Objeto llamada: " + this);   
+    });    
+    //THIS SIEMPRE SERA TITULO   
+    var titulo = document.getElementById("titulo");   
+    titulo.addEventListener("click", function() {   
+        alert("Objeto THIS: " + this);   
+    });    
+    var datos = document.getElementById("datos");   
+    datos.innerText = "Evento Click enlazado: " + contador;   
+    contador++;   
+}    
+function mostrarMensaje()   
+{   
+    alert("He sido llamado!!!");   
+}     
+function mostrarMensaje2() {   
+    alert("He sido llamado 222!!!");   
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
 //PRACTICAS JQUERY
