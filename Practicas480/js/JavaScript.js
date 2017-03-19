@@ -7,7 +7,7 @@ function sumarNumeros() {
     var num2 = parseInt(caja2.value);
     var resultado = document.getElementById("resultado");
     var suma = num1 + num2;
-    resultado.innerText = suma;
+    resultado.innerText = suma;    
     alert("Numeros sumados");
 }
 //2Sentencias
@@ -137,6 +137,7 @@ function calcularDia() {
     }    
     var oper = parseInt(((mes + 1) * 3) / 5);
     var oper2 = parseInt(ano / 4);
+    console.log("operacion = " + oper2);
     var oper3 = parseInt(ano / 100);
     var oper4 = parseInt(ano / 400);
     var oper5 = parseInt(dia + (mes * 2) + ano + oper + oper2 - oper3 + oper4 + 2);
@@ -237,8 +238,7 @@ function validarEAN()
         for (var i = 1; i < num.length - 1; i++) {            
             par += parseInt(num.charAt(i));
             i++;
-        }
-        
+        }        
         if (num.length == 8) {
             impar = impar * 3;
         } else {
@@ -255,7 +255,6 @@ function validarEAN()
     } else {
         alert("numero incorrecto");
     }
-
 }
 //validarEmail()
 function validarEmail() {
@@ -274,7 +273,7 @@ function validarEmail() {
     } else {
         var punto = email.indexOf(".");
         var dominio = email.substr(punto + 1)
-        if (dominio.length >= 2 || dominio.length >= 4) {
+        if (dominio.length >= 2 && dominio.length >= 4) {
             resultado.innerText = "CORRECTO"
         } else {
             resultado.innerText = "Dominio incorrecto";
