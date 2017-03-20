@@ -287,8 +287,7 @@ function analizarNumeros() {
     var suma = 0;
     //RECORREMOS TODAS LAS LETRAS DEL TEXTO   
     for (var i = 0; i < numeros.length; i++) {
-        //CAPTURAR CADA LETRA   
-        //Y CONVERTIR A INT   
+        //CAPTURAR CADA LETRA Y CONVERTIR A INT   
         var letra = numeros.charAt(i);
         var num = parseInt(letra);
         //SUMAMOS CADA NUMERO    
@@ -303,6 +302,8 @@ function analizarNumeros() {
     resultado.innerHTML = "Suma: " + suma + "<br/>";
     resultado.innerHTML += "Media: " + media;
 }
+
+
 //Enlazar eventos dinamicamente
 var contador = 1;
 function enlazarEvento()   
@@ -345,10 +346,135 @@ function mostrarMensaje()
 }     
 function mostrarMensaje2() {   
     alert("He sido llamado 222!!!");   
-}   
+}
 
 
+//Cambiar imagenes radio
+function cambiarImagenes() {
+    //RECUPERAR EL FORMULARIO   
+    var form = document.getElementById("form1");
+    //RECUPERAR LOS RADIOS MEDIANTE NAME   
+    var radios = form.radioimagen;
+    //alert(radios.length);   
+    //RECORRER TODOS LOS RADIOS Y AVERIGUAR EL SELECCIONADO   
+    for (var i = 0; i < radios.length; i++) {
+        //CAPTURAR CADA RADIO INDIVIDUAL   
+        var rdb = radios[i];
+        //LA PROPIEDAD DE UN RADIO O UN CHECKBOX PARA AVERIGUAR SI ESTA SELECCIONADO   
+        //ES CHECKED   
+        if (rdb.checked == true) {
+            //CAPTURAMOS EL VALOR DEL RADIO   
+            var valor = rdb.value;
+            //ACCEDEMOS A TODAS LAS IMÁGENES DE NUESTRO DOCUMENTO IMAGES[]   
+            for (var z = 0;
+                z < document.images.length;
+                z++) {
+                //CAPTURAR CADA IMAGEN INDIVIDUAL   
+                var img = document.images[z];
+                //CAMBIAMOS EL SOURCE   
+                img.src = valor;
+            }
+        }
+    }
+}
 
+
+//Seleccionar deporte
+function mostrarDeporte() {
+    var respuesta = document.getElementById("respuesta");
+    //CAPTURAMOS EL SELECT   
+    var select = document.getElementById("deportes");
+    //NECESITAMOS RECORRER SUS OPCIONES Y AVERIGUAR LA OPCION SELECCIONADA   
+    //SE UTILIZA EL ARRAY OPTIONS[]   
+    for (var i = 0; i < select.options.length; i++) {
+        //CAPTURAMOS CADA OPCION   
+        var opt = select.options[i];
+        //PARA AVERIGUAR SI UN OPTION ESTA SELECCIONADO SE UTILIZA   
+        //LA PROPIEDAD SELECTED   
+        if (opt.selected == true) {
+            //VALUE PERMITE ACCEDER AL CONTENIDO OCULTO TEXT ACCEDE AL CONTENIDO   
+            //VISUAL QUE VE EL USUARIO   
+            respuesta.innerText = opt.value;
+        }
+    }
+}
+function verDeporteSimple() {
+    var respuesta = document.getElementById("respuesta");
+    var select = document.getElementById("deportes");
+
+    //EXISTE UNA PROPIEDAD DEL SELECT QUE INDICA EL INDICE DEL ELEMENTO   
+    //SELECCIONADO SELECTEDINDEX   
+    var indice = select.selectedIndex;
+    if (indice == 0) {
+        respuesta.innerText = "No ha seleccionado ningún deporte";
+    } else {
+        //PODEMOS ACCEDER AL VALUE DE UN SELECT DIRECTAMENTE SIN RECORRER SUS OPTIONS   
+        respuesta.innerText = select.value;
+    }
+}
+
+//SumarNumeroAleatorios
+function generarNumeros() {
+    //CAPTURAR EL FORMULARIO   
+    var form = document.getElementById("form1");
+    //CAPTURAR EL ARRAY DE CAJAS POR NAME   
+    var cajas = form.numeros;
+    //RECORREMOS EL CONJUNTO DEL ARRAY   
+    for (var i = 0; i < cajas.length; i++) {
+        //RECUPERAMOS CADA CAJA INDIVIDUAL   
+        var txt = cajas[i];
+        //GENERAR UN NUMERO ALEATORIO   
+        var aleat = Math.random() * 100;
+        //DARLE FORMATO ENTERO   
+        aleat = Math.ceil(aleat);
+        //PINTAR EN LA CAJA EL VALOR ALEATORIO   
+        txt.value = aleat;
+    }
+}
+function mostrarSumaNumeros() {
+    var resultado = document.getElementById("resultado");
+    //RECUPERAR EL FORMULARIO   
+    var form = document.getElementById("form1");
+    //CAPTURAMOS LAS CAJAS   
+    var cajas = form.numeros;
+    var suma = 0;
+    //RECORREMOS LAS CAJAS   
+    for (var i = 0; i < cajas.length; i++) {
+        //CAPTURAMOS CADA CAJA   
+        var txt = cajas[i];
+        //COGEMOS EL VALOR DE LA CAJA   
+        var valor = txt.value;
+        //CONVERTIMOS A ENTERO PARA LA SUMA   
+        var num = parseInt(valor);
+        //SUMAMOS SUS VALORES   
+        suma += num;
+    }
+    //DIBUJAMOS EL RESULTADO   
+    resultado.innerText = "Suma: " + suma;
+}
+
+
+//sUMAR NUMEROS ENLAZADOS
+function sumaDeNumeros() {
+    //NECESITAMOS RECUPERAR EL BOTON QUE SE HA PULSADO   
+    // this REPRESENTA EL OBJETO QUE REALIZA LA LLAMADA   
+    var btn = this;
+    //DESEAMOS RECUPERAR SU TEXTO O SU VALUE   
+    var valor = btn.value;
+    //CONVERTIMOS A NUMERO   
+    var numero = parseInt(valor);
+    //COGER LA CAJA   
+    var caja = document.getElementById("txtsuma");
+    //RECUPERAMOS EL VALUE DE LA CAJA PARA LA SUMA   
+    var valuecaja = caja.value;
+    //GUARDAMOS EL VALUE CON FORMATO ENTERO   
+    //EN UNA VARIABLE PARA LA SUMA   
+    var suma = parseInt(valuecaja);
+    //SUMAMOS EL NUMERO DEL BOTON A LA VARIABLE SUMA   
+    suma = suma + numero;
+    //CAMBIAMOS EL VALUE DE LA CAJA CON EL VALOR DE LA SUMA   
+    caja.value = suma;
+}
 
 
 

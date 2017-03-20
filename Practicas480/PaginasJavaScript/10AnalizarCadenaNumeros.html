@@ -3,7 +3,30 @@
 <head>
     <title></title>
 	<meta charset="utf-8" />
-    <script src="../js/JavaScript.js"></script>
+    <script src="../js/JavaScript.js">
+        function analizarNumeros() {
+            //RECUPERAMOS LA CAJA   
+            var caja = document.getElementById("txtnumeros");
+            var numeros = caja.value;
+            var suma = 0;
+            //RECORREMOS TODAS LAS LETRAS DEL TEXTO   
+            for (var i = 0; i < numeros.length; i++) {
+                //CAPTURAR CADA LETRA Y CONVERTIR A INT   
+                var letra = numeros.charAt(i);
+                var num = parseInt(letra);
+                //SUMAMOS CADA NUMERO    
+                suma = suma + num;
+            }
+            //OBJETO MATH  
+            //REALIZAR LA MEDIA DE LA SUMA   
+            //ENTRE TODAS LAS LETRAS   
+            var media = suma / numeros.length;
+            //media = Math.floor(media);    
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "Suma: " + suma + "<br/>";
+            resultado.innerHTML += "Media: " + media;
+        }
+    </script>
 </head>
 <body>
     <h2>Analizar texto con números</h2>
@@ -13,7 +36,6 @@
         <button type="button" onclick="analizarNumeros()">
             Analizar números
         </button>
-
     </form>
     <h3 id="resultado"></h3>
 </body>
