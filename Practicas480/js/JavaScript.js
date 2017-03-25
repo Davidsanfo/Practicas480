@@ -455,26 +455,63 @@ function mostrarSumaNumeros() {
 
 
 //sUMAR NUMEROS ENLAZADOS
-function sumaDeNumeros() {
-    //NECESITAMOS RECUPERAR EL BOTON QUE SE HA PULSADO   
-    // this REPRESENTA EL OBJETO QUE REALIZA LA LLAMADA   
-    var btn = this;
-    //DESEAMOS RECUPERAR SU TEXTO O SU VALUE   
-    var valor = btn.value;
-    //CONVERTIMOS A NUMERO   
-    var numero = parseInt(valor);
-    //COGER LA CAJA   
-    var caja = document.getElementById("txtsuma");
-    //RECUPERAMOS EL VALUE DE LA CAJA PARA LA SUMA   
-    var valuecaja = caja.value;
-    //GUARDAMOS EL VALUE CON FORMATO ENTERO   
-    //EN UNA VARIABLE PARA LA SUMA   
-    var suma = parseInt(valuecaja);
-    //SUMAMOS EL NUMERO DEL BOTON A LA VARIABLE SUMA   
-    suma = suma + numero;
-    //CAMBIAMOS EL VALUE DE LA CAJA CON EL VALOR DE LA SUMA   
-    caja.value = suma;
+function enlazarBotones() {
+    //DEBEMOS ACCEDER AL FORMULARIO   
+    var form = document.getElementById("form1");
+    //BUSCAR EL BOTON O BOTONES Y ASOCIARLOS   
+    //BUSCAMOS LOS BOTONES POR SU NAME A TRAVES DEL FORMULARIO   
+    var botones = form.botones;
+
+    //DEBEMOS RECORRER TODO EL ARRAY DE BOTONES   
+    for (var i = 0; i < botones.length; i++) {
+        //RECUPERAMOS CADA BOTON INDIVIDUAL POR SU INDICE (i)   
+        var boton = botones[i];
+        //ASOCIAMOS SU EVENTO CLICK A LA FUNCION SUMARNUMEROS   
+        boton.addEventListener("click", function () {
+            //NECESITAMOS RECUPERAR EL BOTON QUE SE HA PULSADO   
+            // this REPRESENTA EL OBJETO QUE REALIZA LA LLAMADA   
+            var btn = this;
+            //DESEAMOS RECUPERAR SU TEXTO O SU VALUE   
+            var valor = btn.value;
+            //CONVERTIMOS A NUMERO   
+            var numero = parseInt(valor);
+            //COGER LA CAJA   
+            var caja = document.getElementById("txtsuma");
+            //RECUPERAMOS EL VALUE DE LA CAJA PARA LA SUMA   
+            var valuecaja = caja.value;
+            //GUARDAMOS EL VALUE CON FORMATO ENTERO   
+            //EN UNA VARIABLE PARA LA SUMA   
+            var suma = parseInt(valuecaja);
+            //SUMAMOS EL NUMERO DEL BOTON A LA VARIABLE SUMA   
+            suma = suma + numero;
+            //CAMBIAMOS EL VALUE DE LA CAJA CON EL VALOR DE LA SUMA   
+            caja.value = suma;
+        });
+    }
 }
+
+//CREAR TABLA DE MULTIPLICAR
+function capturarBotones() {
+    var form = document.getElementById("form1");
+    var botones = form.botones;    
+    for (var i = 0; i < botones.length; i++) {
+        var boton = botones[i];
+        boton.addEventListener("click", function () {           
+            var btn = this;
+            var valor = btn.value;
+            var num = parseInt(valor);
+            //var form1 = document.getElementById("form1");
+            var cajas = form.cajas;
+            for (var z = 0; z < cajas.length; z++) {
+                var caja = cajas[z];
+                
+                var oper = num * (z + 1);
+                caja.value = oper;
+            }
+        });
+    }
+}
+
 
 
 
