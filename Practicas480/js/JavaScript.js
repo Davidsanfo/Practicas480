@@ -512,6 +512,30 @@ function capturarBotones() {
     }
 }
 
+//ROTAR IMAGEN
+var contador = 0;
+function rotarImagen()
+{
+    var imagen = document.getElementById("imagen");
+    var hora = document.getElementById("hora");
+    var contenido = document.getElementById("contenido");
+    var imagenes = new Array(
+        "tux_jedi.jpg", "tux_joker.png", "tux_logan.png", "tux_mario.png", "tux_rambo.png", "tux_screen.png"
+    );    
+    contenido.innerText = "Contador: " + contador;
+    if (contador > imagenes.length - 1) {
+        contador = 0;
+    }
+    imagen.src = "../Images/" + imagenes[contador];
+    contador++;
+    setTimeout("rotarImagen()", 1000);
+
+}
+
+
+
+//RELOJ
+
 
 
 

@@ -140,10 +140,10 @@
     <Content Include="PaginasJavaScript\10AnalizarCadenaNumeros.html" />
     <Content Include="PaginasJavaScript\11AsociarEventosDinamicamente.html" />
     <Content Include="PaginasJavaScript\12CambiarImagenesRadios.html" />
-    <Content Include="PaginasJavaScript\CrearTablaMultiplicar.html" />
+    <Content Include="PaginasJavaScript\16TablaMultiplicarEnlazada.html" />
     <Content Include="PaginasJavaScript\01EventosAccesoControles.html" />
-    <Content Include="PaginasJavaScript\Reloj.html" />
-    <Content Include="PaginasJavaScript\RotarImagen.html" />
+    <Content Include="PaginasJavaScript\18Reloj.html" />
+    <Content Include="PaginasJavaScript\17RotarImagen.html" />
     <Content Include="PaginasJavaScript\13SeleccionarDeporte.html" />
     <Content Include="PaginasJavaScript\02Sentencias.html" />
     <Content Include="PaginasJavaScript\03CalcularLetraDNI.html" />
