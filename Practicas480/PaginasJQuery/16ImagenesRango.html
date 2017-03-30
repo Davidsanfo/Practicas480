@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $("#rango").change(function() {
+                var valor = parseInt($(this).val());
+                $("#valor").text(valor);
+                //$("#contenedorimagenes").empty();
+                $("#contenedorimagenes").html("");
+                //CREAR TANTAS IMAGENES COMO VALOR HAYA EN EL RANGO
+                for (var i = 1; i <= valor; i++) {
+                    //CREAR UNA IMAGEN
+                    var imagen = $("<img>",
+                    {
+                        "src": "imagenes/5.jpg"
+                        , "style": "width: 75px; height; 75px"
+                    });
+                    //imagen.css("width", "75px");
+                    //imagen.css({ "width": "" });
+                    //ACCION PARA ENTRAR A LA IMAGEN
+                    imagen.on("mousemove",function() {
+                        $(this).attr("src", "imagenes/1.jpg");
+                    });
+
+                    imagen.on("mouseout",function() {
+                        $(this).attr("src", "imagenes/5.jpg");
+                    });
+                    $("#contenedorimagenes").append(imagen);
+                }
+            });
+            $("img").hover(function() {
+                //alert("fdsfds");
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <input id="rango" type="range" min="1" max="20" value="5" />
+        <span id="valor">5</span>
+        <div id="contenedorimagenes">
+            <img src="imagenes/5.jpg" style="width: 75px; height: 75px" />
+            <img src="imagenes/5.jpg" style="width: 75px; height: 75px" />
+            <img src="imagenes/5.jpg" style="width: 75px; height: 75px" />
+            <img src="imagenes/5.jpg" style="width: 75px; height: 75px" />
+            <img src="imagenes/5.jpg" style="width: 75px; height: 75px" />
+        </div>
+    </form>
+</body>
+</html> 

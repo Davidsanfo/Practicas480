@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $("#botoniniciar").click(function () {
+                //CREAMOS 10 BOTONES
+                for (var i = 1; i <= 10; i++) {
+                    var aleat =
+                        Math.floor(Math.random() * 50);
+                    var boton = $("<button>",
+                    {
+                        "text": aleat
+                        , "type": "button"
+                    });
+                    boton.on("click",function() {
+                        //QUEREMOS QUE AL PULSAR UN BOTON, SUMEMOS
+                        //SU CONTENIDO SOBRE <h3>
+                        var suma = parseInt($("#suma").text());
+                        //RECUPERAMOS EL TEXTO DEL BOTON PULSADO
+                        var num = parseInt($(this).text());
+                        suma += num;
+                        $("#suma").text(suma);
+                    });
+                    $("#contenedor").append(boton);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Sumar botones dinámicos</h2>
+    <form>
+        <h3 style="color: blue"
+            id="suma">
+            0
+        </h3>
+        <button id="botoniniciar"
+                type="button">
+            Iniciar aplicación
+        </button>
+        <div id="contenedor"></div>
+    </form>
+</body>
+</html> 

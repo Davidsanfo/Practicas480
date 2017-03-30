@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $(".link").click(function() {
+                var dato = $(this).data("valor");
+                alert("El valor es: " + dato);
+            });
+            $("#botoncrear").click(function () {
+                //CREAMOS EL OBJETO <a> CON ATRIBUTOS
+                var link = $("<a>",
+                {
+                    "href": "#",
+                    "class": "link",
+                    "data-valor":
+                        Math.floor(Math.random() * 50)
+                    , "text": "Pulsar"
+                });
+                //ASOCIAR UN EVENTO A UN CONTROL
+                //DINAMICO
+                link.on("click", function() {
+                    //CODIGO PARA LOS OBJETOS DINAMICOS
+                    var dato = $(this).data("valor");
+                    alert("El valor es: " + dato);
+                });
+                //INSERTAR DENTRO DEL CONTENEDOR <div>
+                $("#contenedor").append(link);
+            });
+            //$(".link").on("click", function() {
+            //    var dato = $(this).data("valor");
+            //    alert("El valor es: " + dato);
+            //});
+        });
+    </script>
+</head>
+<body>
+    <a href="#" id="botoncrear">
+        Crear nuevo elemento
+    </a>
+    <div id="contenedor">
+        <a href="#" class="link" data-valor="14">
+            Pulsar
+        </a>
+    </div>
+</body>
+</html> 

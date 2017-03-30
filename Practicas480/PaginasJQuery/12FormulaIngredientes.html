@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $("#botonformula").click(function() {
+                var resultado = "";
+                $("input[name='formula']").each(function() {
+                    //CAPTURAMOS CADA CHECKBOX
+                    var chk = $(this);
+                    //PREGUNTAMOS POR SU SELECCION
+                    if (chk.is(":checked")) {
+                        //GUARDAMOS LOS CHECKED EN UN TEXTO
+                        resultado += chk.val() + ",";
+                    }
+                });
+                //DESPUES DEL BUCLE, MOSTRAMOS LOS SELECCIONADOS EN UN <h1>
+                $("#resultado").text(resultado);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Ingredientes de la nocilla</h1>
+    <h3 id="resultado"></h3>
+    <form>
+        <ul>
+            <li><input type="checkbox" name="formula" value="Leche" />Leche</li>
+            <li><input type="checkbox" name="formula" value="Cacao" />Cacao </li>
+            <li> <input type="checkbox" name="formula" value="Avellanas" />Avellanas </li>
+            <li><input type="checkbox" name="formula" value="Azucar" />Azucar</li>
+        </ul>
+        <br />
+        <button type="button" id="botonformula">Mostrar formula </button>
+    </form>
+</body>
+</html> 

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btncambiar").click(function () {
+                //RECUPERAR EL ATRIBUTO DE LA ETIQUETA <img> CON ID imagen1
+                var src = $("#imagen1").attr("src");
+                alert("Source: " + src);
+                //CAMBIAR EL ATRIBUTO DE IMAGEN
+                $("#imagen1").attr("src"
+                    , "imagenes/2.jpg");
+            });
+            //CUANDO ENTRE EN LA IMAGEN CAMBIAMOS
+            $("img").hover(function () {
+                $(this).attr("src",
+                        "imagenes/5.jpg");
+            });
+            //CUANDO SALGA DE LA IMAGEN  CAMBIAMOS TAMBIEN
+            $("img").mouseout(function () {
+                $(this).attr("src",
+                    "imagenes/6.jpg");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button type="button" id="btncambiar">
+        Cambiar imagen
+    </button>
+    <hr />
+    <img src="imagenes/1.png" id="imagen1"
+         style="width: 150px; height: 150px" />
+    <img src="imagenes/1.png"
+         style="width: 150px; height: 150px" />
+    <img src="imagenes/1.png"
+         style="width: 150px; height: 150px" />
+    <img src="imagenes/1.png"
+         style="width: 150px; height: 150px" />
+</body>
+</html>  

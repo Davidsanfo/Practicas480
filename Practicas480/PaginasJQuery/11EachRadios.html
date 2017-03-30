@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document)
+            .ready(function() {
+                $("#botoneach").click(function () {
+                    //RECORRER TODOS LOS CONTROLES
+                    //RADIO DE COLORES
+                    $("input[name='colores']").each(function() {
+                        //EN ESTE CODIGO PODEMOS ACCEDER
+                        //A CADA UNO DE LOS ELEMENTOS
+                        //DE UN CONJUNTO
+                        var radio = $(this);
+                        if (radio.is(":checked")) {
+                            $("#resultado").css("background-color", radio.val());
+                        }
+                    });
+                });
+                $("#botonsimple").click(function() {
+                    var color = $("input[name='colores']:checked").val();
+                    $("#resultado").css("background-color", color);
+                });
+            });
+    </script>
+</head>
+<body>
+    <h1 id="resultado">Ejemplo EACH radios</h1>
+    <form>
+        <ul>
+            <li><input type="radio" name="colores" value="red" />Rojo</li>
+            <li><input type="radio" name="colores" value="yellow" />Amarillo</li>
+            <li><input type="radio" name="colores" value="blue" />Azul</li>
+            <li><input type="radio" name="colores" value="orange" />Naranja</li>
+        </ul>
+        <button type="button" id="botoneach">
+            Mostrar resultado EACH
+        </button>
+        <button type="button" id="botonsimple">
+            Mostrar resultado SIMPLE
+        </button>
+    </form>
+</body>
+</html>  

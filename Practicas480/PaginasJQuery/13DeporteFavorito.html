@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $("#botonrespuesta").click(function() {
+                //PODEMOS CAPTURAR EL VALOR DIRECTAMENTE
+                //var deporte = $("#deportes").val();
+                //$("#respuesta").text(deporte);
+                //NECESITAMOS RECORRER TODOS LOS OPTION DEL CONTROL <select>
+                var html = "";
+                $("#deportes option").each(function() {
+                    //CAPTURAR CADA OPCION
+                    var opt = $(this);
+                    //NECESITAMOS SABER
+                    //QUE ELEMENTO ESTA SELECCIONADO
+                    if (opt.prop("selected")) {
+                        html += "<mark>" + opt.val() + "</mark>,";
+                    } else {
+                        html += opt.val() + ",";
+                    }
+                });
+                //DESPUES DEL RECORRIDO, PINTAMOS EL RESULTADO
+                $("#respuesta").html(html);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Seleccione su deporte favorito</h3>
+    <form>
+        <select id="deportes">
+            <option value="Petanca">Petanca</option>
+            <option value="Canicas">Canicas</option>
+            <option value="Curling">Curling</option>
+            <option value="Futbol">Futbol</option>
+        </select>
+        <button type="button" id="botonrespuesta">
+            Mostrar respuesta
+        </button>
+        <p id="respuesta">
+            Petanca, Canicas, <mark>Curling</mark>, Futbol
+        </p>
+    </form>
+</body>
+</html>  

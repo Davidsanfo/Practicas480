@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document)
+            .ready(function() {
+                $("#botonmultiplicar").click(function()
+                {
+                    //CAPTURAR EL NUMERO
+                    var valor = $("#numero").val();
+                    var num = parseInt(valor);
+                    var tabla = "<table>";
+                    for (var i = 1; i <= 10; i++) {
+                        tabla += "<tr>";
+                        var multi = num * i;
+                        tabla += "<td>" + multi + "</td>";
+                        tabla += "</tr>";
+                    }
+                    tabla += "</table>";
+                    $("#tabla").html(tabla);
+                    $("#tabla").addClass("azul");
+                });
+            });
+    </script>
+    <style>
+        .azul {
+            background-color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <label>Introduzca un número: </label>
+    <input type="number" id="numero" />
+    <button type="button" id="botonmultiplicar">
+        Mostrar tabla multiplicar
+    </button>
+    <div id="tabla">
+    </div>
+</body>
+</html>
+  

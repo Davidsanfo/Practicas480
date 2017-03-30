@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        //DECLARAR OBJETO COCHE
+        var Coche = function (marca, modelo)
+        {
+            //CREAMOS PROPIEDADES
+            this.marca = marca;
+            this.modelo = modelo;
+            this.velocidadmaxima = 200;
+            //METODO PARA LA DESCRIPCION LLAMANDO A UNA FUNCION EXTERNA
+            this.getDescripcion = verDescripcionCoche;
+            //METODO ACELERAR LLAMANDO A FUNCION ANONIMA
+            this.velocidadactual = 0;
+            var obj = this;
+            this.acelerarCoche = function ()
+            {
+                obj.velocidadactual += 10;
+            }
+        }
+        function verDescripcionCoche()
+        {
+            return this.marca + " " + this.modelo;
+        }
+        //AHORA QUEREMOS UN DEPORTIVO QUE DEBE SER IGUAL A UN COCHE
+        //EXCEPTO EN QUE NECESITAMOS QUE ACELERE DE 15 EN 15.
+        var Deportivo = function ()
+        {
+            this.marca = "PONTIAC";
+            this.modelo = "FIREBIRD";
+            this.color = "ROJO";
+            var obj = this;
+            //SOBRESCRIBIMOS EL METODO
+            //PARA ACELERAR
+            //DENTRO SIN PROTOTYPE
+            this.acelerarCoche = function () {
+                this.velocidadactual += 20;
+            }
+        }
+        //UN DEPORTIVO ES UN COCHE
+        Deportivo.prototype = new Coche();
+        //FUERA SIN PROTOTYPE
+        Deportivo.prototype.acelerarCoche = function () {
+            this.velocidadactual += 20;
+        }
+        $(document).ready(function () {
+            var c = new Coche("SEAT", "600");
+            var d = new Deportivo();
+            $("#botonacelerar").click(function() {
+                c.acelerarCoche();
+                d.acelerarCoche();
+                $("#resultadocoche").text("Velocidad actual: "
+                    + c.velocidadactual);
+                $("#resultadodeportivo").text("Deportivo: "
+                    + d.velocidadactual);
+            });
+            $("#botondescripcion").click(function() {
+                var descripcion =
+                    c.getDescripcion();
+                $("#resultadocoche").text(descripcion);
+                    $("#resultadodeportivo")
+                        .text(
+                            d.getDescripcion() + ", Color: "
+                            + d.color
+                    );
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2 id="resultadocoche"></h2>
+    <h2 style="color:red"
+        id="resultadodeportivo"></h2>
+    <form>
+        <button id="botonacelerar" type="button">
+            Acelerar
+        </button>
+        <button id="botondescripcion" type="button">
+            Mostrar descripción
+        </button>
+    </form>
+</body>
+</html> 

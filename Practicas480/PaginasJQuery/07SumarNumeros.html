@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $("#btnsumar").click(function() {
+                //CAPTURAR EL CONTENIDO DE LAS CAJAS
+                var num1 = $("#txtnum1").val();
+                var num2 = $("#txtnum2").val();
+                var suma = parseInt(num1)
+                    + parseInt(num2);
+                //DIBUJAMOS EN EL RESULTADO
+                //$("#resultado").text(suma);
+                $("#resultado").html("<h2>" + suma + "</h2>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label>Número 1: </label>
+        <input type="text" id="txtnum1" />
+        <br />
+        <label>Número 2: </label>
+        <input type="text" id="txtnum2" />
+        <br />
+        <button type="button" id="btnsumar">
+            Sumar números
+        </button>
+        <p id="resultado"></p>
+    </form>
+</body>
+</html>  

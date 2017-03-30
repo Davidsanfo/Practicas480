@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document)
+            .ready(function() {
+                $("#botonmultiplicar").click(function()
+                {
+                    //CAPTURAR EL NUMERO
+                    var valor = $("#numero").val();
+                    var num = parseInt(valor);
+                    //CAPTURAR EL OBJETO
+                    var lista = $("#lista");
+                    for (var i = 1; i <= 10; i++)
+                    {
+                        //CREAMOS UN ELEMENTO
+                        var elem = $("<li>");
+                        var contenido = num + "*" + i + "=" + (num * i);
+                        elem.text(contenido);
+                        lista.append(elem);
+                    }
+                });
+            });
+    </script>
+    <style>
+        .azul {
+            background-color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <label>Introduzca un número: </label>
+    <input type="number" id="numero" />
+    <button type="button" id="botonmultiplicar">
+        Mostrar tabla multiplicar
+    </button>
+    <div id="tabla">
+        <ul id="lista"></ul>
+    </div>
+</body>
+</html>
+  

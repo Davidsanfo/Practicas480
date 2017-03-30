@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $("button").click(function() {
+                //CREAMOS UN OBJETO <h1>
+                var titulo = $("<h1>");
+                //AÑADIR CLASES
+                titulo.addClass("rojo");
+                //CAMBIAR SU CONTENIDO
+                titulo.text("Objeto dinámico");
+                //PARA PODER INSERTAR ELEMENTOS
+                //A UN PARENT, SE UTILIZA EL
+                //METODO APPEND
+                $("#capa").append(titulo);
+            });
+        });
+    </script>
+    <style>
+        .rojo {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crear objetos dinámicos</h1>
+    <button type="button">
+        Crear objeto HTML dinámico
+    </button>
+    <div id="capa" style="width: 200px; height: 150px; background-color: lightgreen">
+
+    </div>
+</body>
+</html>
+ 

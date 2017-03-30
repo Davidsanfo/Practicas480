@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+
+        //DECLARACION DE FUNCIONALIDAD DE PROTOTIPOS
+        //QUEREMOS AÑADIR NUEVAS CARACTERISTICAS A LA CLASE ARRAY
+        Array.prototype.mostrarLongitud = function() {
+            //QUEREMOS SABER LA LONGITUD
+            //DEL ARRAY
+            alert("Longitud del Array: "+ this.length);
+        };
+        //AÑADIR FUNCIONALIDAD PARA MOSTRAR
+        //LA SUMA DE NUMEROS
+        Array.prototype.sumarNumeros = function() {
+            var total = 0;
+            for (var i = 0; i < this.length; i++) {
+                var num = this[i];
+                total += num;
+            }
+            return total;
+        }
+        $(document).ready(function() {
+            $("#botonnumero").click(function() {
+                var matriz =
+                    new Array("A", "B", "C");
+                matriz.mostrarLongitud();
+            });
+            $("#botonsumar").click(function() {
+                var a =
+                    new Array(88, 85, 3, 4, 5, 6, 7);
+                var suma = a.sumarNumeros();
+                $("#resultado").text(suma);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2 id="resultado"></h2>
+    <form>
+        <button id="botonnumero" type="button">
+            Número de elementos
+        </button>
+        <button id="botonsumar" type="button">
+            Sumar números
+        </button>
+    </form>
+</body>
+</html> 
